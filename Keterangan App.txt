@@ -1,0 +1,4 @@
+APP ini berbasis CLI (command line interface)
+cukup run di terminal yang sudah terinstall
+python.
+>>py App.py

@@ -1,0 +1,33 @@
+INI ADALAH QUERY DARI SOAL YANG ADA DI docx
+
+1. CREATE TABLE silsilah(
+	nama varchar(100),
+	jenis_kelamin varchar(100),
+	anak_dari varchar(100)
+)
+
+3. SELECT * FROM `silsilah` 
+WHERE anak_dari = 'Budi'
+
+4. SELECT * FROM `silsilah` 
+WHERE anak_dari 
+IN(SELECT nama 
+FROM `silsilah` 
+WHERE anak_dari = 'budi')
+
+5. SELECT * FROM `silsilah` 
+WHERE anak_dari 
+IN(SELECT nama 
+FROM `silsilah` 
+WHERE anak_dari = 'budi') 
+AND jenis_kelamin = 'wanita'
+
+6. SELECT * FROM `silsilah` 
+WHERE anak_dari = ( 
+	SELECT anak_dari 
+	FROM `silsilah` 
+	WHERE nama = (
+		SELECT anak_dari 
+		FROM `silsilah` 
+		WHERE nama = 'Farah')) 
+AND jenis_kelamin = 'wanita'
